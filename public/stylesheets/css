@@ -195,7 +195,7 @@ body {
   .box-common:hover .tip-content:before {
     content: ' ';
     position: absolute;
-    top: 65%;
+    top: 64%;
     left: -16px;
     width: 0;
     height: 0;

@@ -18,10 +18,10 @@ export function calculatePercent(obj) {
       const positive = (item.positive / total) * 100;
       const negative = (item.negative / total) * 100;
 
-      return `${positive.toFixed(0)}% ${negative.toFixed(0)}%`
+      return `<span>${positive.toFixed(0)}%</span> <span>${negative.toFixed(0)}%</span>`;
     }
 
-    return `${item.positive = 0 }% ${item.negative = 0}%`
+    return `<span>${item.positive = 0 }%</span> <span>${item.negative = 0}%</span>`;
 
   });
 

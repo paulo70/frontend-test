@@ -56,33 +56,41 @@ body {
     font-family: 'montserratbold';
     font-size: 1.500em; // 24px
     color: $color-grey-strong;
-    text-align: center;
-    display: block;
+    display: inline-block;
     opacity: 0;
-    padding: 0.375em 0;
+    padding: 0.250em 0;
+    span {
+      text-align: left;
+      margin-left: 0.750em;
+      +span {
+        text-align: right;
+        margin-left: 1.375em;
+      }
+    }
   }
 
   .likes {
-    font-family: 'montserratregular';
-    font-size: $font-small-large;
+    font-family: 'montserratsemibold';
+    font-size: $font-small;
+    text-transform:uppercase;
     position: relative;
     top: 0;
-    left: 10px;
+    left: 1.250em;
     z-index: 20;
     color: $color-white;
     @include opacity(0);
 
     +.likes {
-      left: 24px;
+      left: 2.813em;
     }
   }
 
   .divider {
     position: absolute;
-    left: 50%;
+    left: 45%;
     border: 1px solid $color-fosce-black;
     z-index: 10;
-    height: 10.333em;
+    height: 3.875em; // 62px
     @include opacity(0);
   }
 
@@ -111,10 +119,10 @@ body {
       color: $color-fosce-black;
     }
   }
-  &:hover{
+  &:hover {
     @include tooltip();
   }
-  &:hover{
+  &:hover {
     @include tooltipBody();
   }
 }
