@@ -112,7 +112,6 @@ import * as components from './components';
           <div class='box-float'>
             <h2>${properties[3].name}</h2>
             <h3>${properties[3].description}</h3>
-            <h4>${percent[3]}</h4>
           </div>
           <div class="tip-content">
             <span class='divider'></span>
