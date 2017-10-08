@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+<meta content="origin-when-cross-origin" name="referrer">
+
+  <link crossorigin="anonymous" href="./SASS @font-face mixin_files/frameworks-bedfc518345498ab3204d330c1727cde7e733526a09cd7df6867f6a231565091.css" integrity="sha256-vt/FGDRUmKsyBNMwwXJ83n5zNSagnNffaGf2ojFWUJE=" media="all" rel="stylesheet">
+  <link crossorigin="anonymous" href="./SASS @font-face mixin_files/github-86a46fd737fcaf39214a615251ced6da6882e3efd5e45fffd1c5f98a6d58a047.css" integrity="sha256-hqRv1zf8rzkhSmFSUc7W2miC4+/V5F//0cX5im1YoEc=" media="all" rel="stylesheet">
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>SASS @font-face mixin</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="https://gist.github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://gist.github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars2.githubusercontent.com/u/188426?v=4&amp;s=400" property="og:image"><meta content="Gist" property="og:site_name"><meta content="object" property="og:type"><meta content="SASS @font-face mixin" property="og:title"><meta content="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6" property="og:url"><meta content="SASS @font-face mixin" property="og:description">
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MjA4Mjc0ODMwOjAwNDU1MTlkMmQ4N2U5NDdiN2U0YTU5ZWI5MjcwOGI4YzUwMmM3MDkyNWI1MjIyYzFiNTczNTdiNDRkOTA5OGE=--55c309bb4ab799e6d3e56afebc18249e9c492e51">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="https://gist.github.com/sessions/sudo_modal">
+  <meta name="request-id" content="95C4:3674:63E040:A4D8A8:59D83CB8" data-pjax-transient="">
+  
+
+  <meta name="selected-link" value="gist_code" data-pjax-transient="">
+
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-4">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="gist" name="octolytics-app-id"><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url"><meta content="95C4:3674:63E040:A4D8A8:59D83CB8" name="octolytics-dimension-request_id"><meta content="iad" name="octolytics-dimension-region_edge"><meta content="iad" name="octolytics-dimension-region_render"><meta content="1468431" name="octolytics-actor-id"><meta content="paulo70" name="octolytics-actor-login"><meta content="d4768edf8615aec14663afd85898f404ec2fbb11904da4c534b8b13954d956dc" name="octolytics-actor-hash">
+<meta content="/&lt;user-name&gt;/&lt;gist-id&gt;" data-pjax-transient="true" name="analytics-location">
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+    <meta content="true" name="octolytics-dimension-public"><meta content="17889312" name="octolytics-dimension-gist_id"><meta content="d0460e5c2d5d7f9bc5e6" name="octolytics-dimension-gist_name"><meta content="false" name="octolytics-dimension-anonymous"><meta content="188426" name="octolytics-dimension-owner_id"><meta content="jonathantneal" name="octolytics-dimension-owner_login"><meta content="false" name="octolytics-dimension-forked">
+
+  <meta class="js-ga-set" name="dimension5" content="public">
+  <meta class="js-ga-set" name="dimension6" content="owned">
+  <meta class="js-ga-set" name="dimension7" content="markdown scss">
+
+
+      <meta name="hostname" content="gist.github.com">
+  <meta name="user-login" content="paulo70">
+
+      <meta name="expected-hostname" content="gist.github.com">
+    <meta name="js-proxy-site-detection-payload" content="MDVlM2ZlNDNjZWU2YmI1YTAzYWFmYWJmNjMxZTUwNjQ0NTZiOWJhZWViY2M1NWU4NTc1ZjMzMWJlYTVkODBlNHx7InJlbW90ZV9hZGRyZXNzIjoiMTc3LjE0OC4xNjIuMjUwIiwicmVxdWVzdF9pZCI6Ijk1QzQ6MzY3NDo2M0UwNDA6QTREOEE4OjU5RDgzQ0I4IiwidGltZXN0YW1wIjoxNTA3MzQzNTQ0LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+    <meta name="enabled-features" content="UNIVERSE_BANNER">
+
+  <meta name="html-safe-nonce" content="c45847f0983af13b96e7d2092522c2a51892afce">
+
+  <meta http-equiv="x-pjax-version" content="8bbb3fd0e5ded14dbffebb88288ec63f">
+  
+
+      <link href="https://gist.github.com/jonathantneal.atom" rel="alternate" title="atom" type="application/atom+xml">
+  
+  <link crossorigin="anonymous" href="./SASS @font-face mixin_files/gist-f0d67f3d7c0bd176fa6516aa440e609b7aaeeed2f027c8a6e001fa836eb0692f.css" integrity="sha256-8NZ/PXwL0Xb6ZRaqRA5gm3qu7tLwJ8im4AH6g26waS8=" media="all" rel="stylesheet">
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <meta name="u2f-support" content="true">
+
+  <style type="text/css">/* This is not a zero-length file! */</style><style type="text/css">/* This is not a zero-length file! */</style></head>
+
+  <body class="logged-in env-production">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        <div class="Header gist-header header-logged-in" role="banner">
+  <div class="container-lg px-3 clearfix">
+    <div class="d-flex flex-justify-between">
+      <div class="d-flex">
+        <a href="https://gist.github.com/" aria-label="Gist Homepage" class="header-logo-wordmark" data-hotkey="g d">
+          <svg aria-hidden="true" class="octicon octicon-logo-github" height="28" version="1.1" viewBox="0 0 45 16" width="78"><path fill-rule="evenodd" d="M18.53 12.03h-.02c.009 0 .015.01.024.011h.006l-.01-.01zm.004.011c-.093.001-.327.05-.574.05-.78 0-1.05-.36-1.05-.83V8.13h1.59c.09 0 .16-.08.16-.19v-1.7c0-.09-.08-.17-.16-.17h-1.59V3.96c0-.08-.05-.13-.14-.13h-2.16c-.09 0-.14.05-.14.13v2.17s-1.09.27-1.16.28c-.08.02-.13.09-.13.17v1.36c0 .11.08.19.17.19h1.11v3.28c0 2.44 1.7 2.69 2.86 2.69.53 0 1.17-.17 1.27-.22.06-.02.09-.09.09-.16v-1.5a.177.177 0 0 0-.146-.18zm23.696-2.2c0-1.81-.73-2.05-1.5-1.97-.6.04-1.08.34-1.08.34v3.52s.49.34 1.22.36c1.03.03 1.36-.34 1.36-2.25zm2.43-.16c0 3.43-1.11 4.41-3.05 4.41-1.64 0-2.52-.83-2.52-.83s-.04.46-.09.52c-.03.06-.08.08-.14.08h-1.48c-.1 0-.19-.08-.19-.17l.02-11.11c0-.09.08-.17.17-.17h2.13c.09 0 .17.08.17.17v3.77s.82-.53 2.02-.53l-.01-.02c1.2 0 2.97.45 2.97 3.88zm-8.72-3.61H33.84c-.11 0-.17.08-.17.19v5.44s-.55.39-1.3.39-.97-.34-.97-1.09V6.25c0-.09-.08-.17-.17-.17h-2.14c-.09 0-.17.08-.17.17v5.11c0 2.2 1.23 2.75 2.92 2.75 1.39 0 2.52-.77 2.52-.77s.05.39.08.45c.02.05.09.09.16.09h1.34c.11 0 .17-.08.17-.17l.02-7.47c0-.09-.08-.17-.19-.17zm-23.7-.01h-2.13c-.09 0-.17.09-.17.2v7.34c0 .2.13.27.3.27h1.92c.2 0 .25-.09.25-.27V6.23c0-.09-.08-.17-.17-.17zm-1.05-3.38c-.77 0-1.38.61-1.38 1.38 0 .77.61 1.38 1.38 1.38.75 0 1.36-.61 1.36-1.38 0-.77-.61-1.38-1.36-1.38zm16.49-.25h-2.11c-.09 0-.17.08-.17.17v4.09h-3.31V2.6c0-.09-.08-.17-.17-.17h-2.13c-.09 0-.17.08-.17.17v11.11c0 .09.09.17.17.17h2.13c.09 0 .17-.08.17-.17V8.96h3.31l-.02 4.75c0 .09.08.17.17.17h2.13c.09 0 .17-.08.17-.17V2.6c0-.09-.08-.17-.17-.17zM8.81 7.35v5.74c0 .04-.01.11-.06.13 0 0-1.25.89-3.31.89-2.49 0-5.44-.78-5.44-5.92S2.58 1.99 5.1 2c2.18 0 3.06.49 3.2.58.04.05.06.09.06.14L7.94 4.5c0 .09-.09.2-.2.17-.36-.11-.9-.33-2.17-.33-1.47 0-3.05.42-3.05 3.73s1.5 3.7 2.58 3.7c.92 0 1.25-.11 1.25-.11v-2.3H4.88c-.11 0-.19-.08-.19-.17V7.35c0-.09.08-.17.19-.17h3.74c.11 0 .19.08.19.17z"></path></svg>
+          <svg aria-hidden="true" class="octicon octicon-logo-gist" height="28" version="1.1" viewBox="0 0 25 16" width="40"><path fill-rule="evenodd" d="M4.7 8.73h2.45v4.02c-.55.27-1.64.34-2.53.34-2.56 0-3.47-2.2-3.47-5.05 0-2.85.91-5.06 3.48-5.06 1.28 0 2.06.23 3.28.73V2.66C7.27 2.33 6.25 2 4.63 2 1.13 2 0 4.69 0 8.03c0 3.34 1.11 6.03 4.63 6.03 1.64 0 2.81-.27 3.59-.64V7.73H4.7v1zm6.39 3.72V6.06h-1.05v6.28c0 1.25.58 1.72 1.72 1.72v-.89c-.48 0-.67-.16-.67-.7v-.02zm.25-8.72c0-.44-.33-.78-.78-.78s-.77.34-.77.78.33.78.77.78.78-.34.78-.78zm4.34 5.69c-1.5-.13-1.78-.48-1.78-1.17 0-.77.33-1.34 1.88-1.34 1.05 0 1.66.16 2.27.36v-.94c-.69-.3-1.52-.39-2.25-.39-2.2 0-2.92 1.2-2.92 2.31 0 1.08.47 1.88 2.73 2.08 1.55.13 1.77.63 1.77 1.34 0 .73-.44 1.42-2.06 1.42-1.11 0-1.86-.19-2.33-.36v.94c.5.2 1.58.39 2.33.39 2.38 0 3.14-1.2 3.14-2.41 0-1.28-.53-2.03-2.75-2.23h-.03zm8.58-2.47v-.86h-2.42v-2.5l-1.08.31v2.11l-1.56.44v.48h1.56v5c0 1.53 1.19 2.13 2.5 2.13.19 0 .52-.02.69-.05v-.89c-.19.03-.41.03-.61.03-.97 0-1.5-.39-1.5-1.34V6.94h2.42v.02-.01z"></path></svg>
+</a>
+        <div class="site-search js-site-search" role="search">
+            <div class="header-search" role="search">
+
+<!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="https://gist.github.com/search" class="position-relative js-quicksearch-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label class="header-search-wrapper form-control js-chromeless-input-container">
+    <input type="text" class="form-control js-site-search-focus header-search-input js-navigation-enable js-quicksearch-field" data-hotkey="s" name="q" placeholder="Search…" tabindex="1" autocorrect="off" autocomplete="off" autocapitalize="off">
+  </label>
+
+    <div class="gist-quicksearch-results js-quicksearch-results js-navigation-container" data-quicksearch-url="/search/quick"></div>
+</form></div>
+
+        </div>
+
+        <ul class="list-style-none d-flex flex-items-center text-bold pl-2" role="navigation">
+          <li><a href="https://gist.github.com/discover" class="HeaderNavlink px-2" data-ga-click="Header, go to all gists, text:all gists">All gists</a></li>
+          <li><a href="https://github.com/" class="HeaderNavlink px-2" data-ga-click="Header, go to GitHub, text:GitHub">GitHub</a></li>
+        </ul>
+      </div>
+
+        <ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
+          <li><a href="https://gist.github.com/" class="HeaderNavlink text-bold pr-3" data-ga-click="Header, go to new gist, text:new gist">New gist</a></li>
+          <li class="dropdown js-menu-container">
+            <button class="btn-link HeaderNavlink name tooltipped tooltipped-sw js-menu-target" type="button" aria-label="View profile and more" aria-expanded="false" aria-haspopup="true" data-ga-click="Header, show menu, icon:avatar">
+              <img alt="@paulo70" class="avatar" height="20" src="./SASS @font-face mixin_files/1468431" width="20">
+              <span class="dropdown-caret"></span>
+            </button>
+
+            <div class="dropdown-menu-content js-menu-content">
+              <div class="dropdown-menu dropdown-menu-sw">
+                <div class="dropdown-header header-nav-current-user css-truncate">
+                  Signed in as <strong class="css-truncate-target">paulo70</strong>
+                </div>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="https://gist.github.com/paulo70" data-ga-click="Header, go to your gists, text:your gists">
+                  Your gists
+                </a>
+
+                <a class="dropdown-item" href="https://gist.github.com/paulo70/starred" data-ga-click="Header, go to starred gists, text:starred gists">
+                  Starred gists
+                </a>
+
+                <a class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">
+                  Help
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="https://github.com/paulo70" data-ga-click="Header, go to profile, text:your profile">
+                  Your GitHub profile
+                </a>
+
+                <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="https://gist.github.com/auth/github/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="yXQNNUR28GH/Lt1JeDBRFbhB8EUOi08v5ytMaTSntze4Tzx4Fynv4QC3An0kpOomdXxGXBvxfBSRGuddPhRDZg=="></div>
+                  <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+                    Sign out
+                  </button>
+</form>              </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main">
+        <div itemscope="" itemtype="http://schema.org/Code">
+    <div id="gist-pjax-container" class="gist-content-wrapper" data-pjax-container="">
+      
+
+
+
+
+<div class="gisthead pagehead repohead instapaper_ignore readability-menu experiment-repo-nav mb-4">
+  <div class="container">
+    
+  
+<div class="container repohead-details-container">
+
+  <ul class="pagehead-actions">
+
+
+    <li>
+        
+  <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/unstar" class="starred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="eVaMK+bBdGLtyQ81S7q43tO3WMEWGGWDKvvm4m8t4UgOFhtq9B6HjYx0sVm9CO03Ijl2Drxol7/lykEt7jLEVg=="></div>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this gist" title="Unstar jonathantneal/d0460e5c2d5d7f9bc5e6" data-ga-click="Repository, click unstar button, action:gists/gists#show; text:Unstar">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/stargazers" aria-label="242 users starred this repository">
+          242
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/star" class="unstarred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="msOIuUUFZdhdrKBHuub8ut6FpzxvUXnd7NUB+BqqwS7yNOA2hUhZeq6Cwgmm4DfZP7XSmNwCL28GGiIz+7tVdw=="></div>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Star this gist" title="Star jonathantneal/d0460e5c2d5d7f9bc5e6" data-ga-click="Repository, click star button, action:gists/gists#show; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/stargazers" aria-label="242 users starred this repository">
+          242
+        </a>
+</form>  </div>
+
+
+    </li>
+
+      <li>
+          <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/fork" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="JeZyQ143m60xU1uaXDKcFs6g0BENskIBH9Xc0jR08cUqnvYQqNZYPL+WsmLpUwvp9OBr6Rpf3NPOa0OFwRdQZQ=="></div>
+    <button class="btn btn-sm btn-with-count" type="submit">
+      <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+      Fork
+    </button>
+      <a class="social-count js-social-count" href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/forks" aria-label="53 users forked this gist">
+        53
+      </a>
+</form>
+      </li>
+  </ul>
+
+  <h1 class="public css-truncate">
+    <img alt="@jonathantneal" class="avatar gist-avatar" height="26" src="./SASS @font-face mixin_files/188426" width="26">
+    <span class="author"><a href="https://gist.github.com/jonathantneal" class="url fn" rel="author"><span itemprop="author">jonathantneal</span></a></span><!--
+        --><span class="path-divider">/</span><!--
+        --><strong itemprop="name" class="gist-header-title css-truncate-target"><a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6">README.md</a></strong>
+
+    <div class="d-block text-small text-gray">
+      Last active <time-ago datetime="2017-10-02T16:47:01Z" title="2 de out de 2017 13:47 BRT">4 days ago</time-ago>
+        •
+        <!-- '"` --><!-- </textarea></xmp> --><form action="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/report" class="inline-form" method="post"><div><input aria-label="Report gist as abuse" class="btn-link text-red" data-confirm="Do you want to report the contents of this gist as abuse?" type="submit" value="Report gist"><input name="authenticity_token" type="hidden" value="lsQ5lgzJy1cQ+sAs+0M7ZLzebL+SapZIWWhWrtlwgk7ndidcSXC1tH/GYSJbWDyXMMbCF93HwjQg310qbg8Caw=="></div></form>
+    </div>
+  </h1>
+</div>
+
+<div class="container gist-file-navigation">
+  <div class="float-right file-navigation-options" data-multiple="">
+
+    <div class="file-navigation-option">
+  <input type="hidden" name="protocol_type" value="clone">
+
+  <div class="select-menu js-menu-container js-select-menu">
+    <div class="input-group js-select-button js-zeroclipboard-container">
+      <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone Embed, location:repo overview" aria-expanded="false" aria-haspopup="true">
+    Embed
+  </button>
+</div>
+<input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="&lt;script src=&quot;https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6.js&quot;&gt;&lt;/script&gt;" aria-label="Clone this repository at &lt;script src=&quot;https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6.js&quot;&gt;&lt;/script&gt;" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></button>
+</div>
+
+    </div>
+
+    <div class="select-menu-modal-holder">
+      <div class="select-menu-modal js-menu-content">
+        <div class="select-menu-header">
+          <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+          <span class="select-menu-title">What would you like to do?</span>
+        </div>
+
+        <div class="select-menu-list js-navigation-container" role="menu">
+            <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+              <div class="select-menu-item-text">
+                <input type="radio" name="protocol_selector" value="embed" checked="">
+                <span class="select-menu-item-heading">
+                  
+                  Embed
+                </span>
+                  <span class="description">
+                    Embed this gist in your website.
+                  </span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone Embed, location:repo overview" aria-expanded="false" aria-haspopup="true">
+    Embed
+  </button>
+</div>
+<input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="&lt;script src=&quot;https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6.js&quot;&gt;&lt;/script&gt;" aria-label="Clone this repository at &lt;script src=&quot;https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6.js&quot;&gt;&lt;/script&gt;" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></button>
+</div>
+
+                </span>
+              </div>
+            </div>
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+              <div class="select-menu-item-text">
+                <input type="radio" name="protocol_selector" value="share">
+                <span class="select-menu-item-heading">
+                  
+                  Share
+                </span>
+                  <span class="description">
+                    Copy sharable URL for this gist.
+                  </span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone Share, location:repo overview" aria-expanded="false" aria-haspopup="true">
+    Share
+  </button>
+</div>
+<input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6" aria-label="Clone this repository at https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></button>
+</div>
+
+                </span>
+              </div>
+            </div>
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+              <div class="select-menu-item-text">
+                <input type="radio" name="protocol_selector" value="http">
+                <span class="select-menu-item-heading">
+                  Clone via
+                  HTTPS
+                </span>
+                  <span class="description">
+                    Clone with Git or checkout with SVN using the repository's web address.
+                  </span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone HTTPS, location:repo overview" aria-expanded="false" aria-haspopup="true">
+    HTTPS
+  </button>
+</div>
+<input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="https://gist.github.com/d0460e5c2d5d7f9bc5e6.git" aria-label="Clone this repository at https://gist.github.com/d0460e5c2d5d7f9bc5e6.git" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></button>
+</div>
+
+                </span>
+              </div>
+            </div>
+            <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+              <div class="select-menu-item-text">
+                <input type="radio" name="protocol_selector" value="ssh">
+                <span class="select-menu-item-heading">
+                  Clone via
+                  SSH
+                </span>
+                  <span class="description">
+                    Clone with an SSH key and passphrase from your GitHub settings.
+                  </span>
+                <span class="js-select-button-text hidden-select-button-text">
+                  <div class="input-group-button">
+  <button type="button" class="btn btn-sm select-menu-button js-menu-target" data-ga-click="Repository, clone SSH, location:repo overview" aria-expanded="false" aria-haspopup="true">
+    SSH
+  </button>
+</div>
+<input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="git@gist.github.com:d0460e5c2d5d7f9bc5e6.git" aria-label="Clone this repository at git@gist.github.com:d0460e5c2d5d7f9bc5e6.git" readonly="">
+<div class="input-group-button">
+  <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></button>
+</div>
+
+                </span>
+              </div>
+            </div>
+        </div>
+        <div class="select-menu-list" role="menu">
+          <a class="select-menu-item select-menu-action" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+            <svg aria-hidden="true" class="octicon octicon-question select-menu-item-icon" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"></path></svg>
+            <div class="select-menu-item-text">
+              Learn more about clone URLs
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="file-navigation-option">
+</div>
+
+
+    <div class="file-navigation-option">
+      <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/archive/883a5b95e964bf651e505ae4617edbdf37133cde.zip" class="btn btn-sm" rel="nofollow" data-ga-click="Gist, download zip, location:gist overview">
+        Download ZIP
+      </a>
+    </div>
+  </div>
+
+  <div class="float-left">
+    <nav class="reponav js-repo-nav js-sidenav-container-pjax" role="navigation" data-pjax="#gist-pjax-container">
+
+  <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6" aria-label="Code" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-pjax="true" data-selected-links="gist_code /jonathantneal/d0460e5c2d5d7f9bc5e6">
+    <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
+    Code
+</a>
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/revisions" aria-label="Revisions" class="js-selected-navigation-item reponav-item" data-hotkey="g r" data-pjax="true" data-selected-links="gist_revisions /jonathantneal/d0460e5c2d5d7f9bc5e6/revisions">
+      <svg aria-hidden="true" class="octicon octicon-git-commit" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z"></path></svg>
+      Revisions
+      <span class="Counter">9</span>
+</a>
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/stargazers" aria-label="Stars" class="js-selected-navigation-item reponav-item" data-hotkey="g s" data-pjax="true" data-selected-links="gist_stars /jonathantneal/d0460e5c2d5d7f9bc5e6/stargazers">
+      <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
+      Stars
+      <span class="Counter">242</span>
+</a>
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/forks" aria-label="Forks" class="js-selected-navigation-item reponav-item" data-hotkey="g f" data-pjax="true" data-selected-links="gist_forks /jonathantneal/d0460e5c2d5d7f9bc5e6/forks">
+      <svg aria-hidden="true" class="octicon octicon-git-branch" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+      Forks
+      <span class="Counter">53</span>
+</a></nav>
+
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content gist-content">
+    
+  <div>
+    <div class="repository-meta js-details-container Details">
+  <div class="repository-meta-content" itemprop="about">
+    SASS <a href="https://github.com/font-face" class="user-mention">@font-face</a> mixin
+  </div>
+</div>
+
+
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-readme-md" class="file">
+      <div class="file-header">
+        <div class="file-actions">
+
+          <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/raw/883a5b95e964bf651e505ae4617edbdf37133cde/README.md" class="btn btn-sm ">Raw</a>
+        </div>
+        <div class="file-info">
+          <span class="icon">
+            <svg aria-hidden="true" class="octicon octicon-gist" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.5 5L10 7.5 7.5 10l-.75-.75L8.5 7.5 6.75 5.75 7.5 5zm-3 0L2 7.5 4.5 10l.75-.75L3.5 7.5l1.75-1.75L4.5 5zM0 13V2c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v11c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1zm1 0h10V2H1v11z"></path></svg>
+          </span>
+          <a class="tooltipped tooltipped-s css-truncate" aria-label="Permalink" href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#file-readme-md">
+            <strong class="user-select-contain gist-blob-name css-truncate-target">
+              README.md
+            </strong>
+          </a>
+        </div>
+      </div>
+    
+  <div id="readme" class="readme blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="text"><h1><a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#font-face" aria-hidden="true" class="anchor" id="user-content-font-face"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Font Face</h1>
+<p>A mixin for writing @font-face rules in SASS.</p>
+<h2><a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#usage" aria-hidden="true" class="anchor" id="user-content-usage"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>Create a font face rule. Embedded OpenType, WOFF2, WOFF, TrueType, and SVG files are automatically sourced.</p>
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@include</span> <span class="pl-c1">font-face</span>(<span class="pl-v">Samplino</span>, <span class="pl-v">fonts/Samplino</span>);</pre></div>
+<p>Rendered as CSS:</p>
+<div class="highlight highlight-source-css"><pre><span class="pl-k">@font-face</span> {
+	<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Samplino<span class="pl-pds">"</span></span>;
+	<span class="pl-c1"><span class="pl-c1">src</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplino.eot?<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>eot<span class="pl-pds">"</span></span>),
+		 <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplino.woff2<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff2<span class="pl-pds">"</span></span>),
+		 <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplino.woff<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff<span class="pl-pds">"</span></span>),
+		 <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplino.ttf<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>truetype<span class="pl-pds">"</span></span>),
+		 <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplino.svg#Samplino<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>svg<span class="pl-pds">"</span></span>);
+}</pre></div>
+<hr>
+<p>Create a font face rule that applies to bold and italic text.</p>
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@include</span> <span class="pl-c1">font-face</span>(<span class="pl-s"><span class="pl-pds">"</span>Samplina Neue<span class="pl-pds">"</span></span>, <span class="pl-v">fonts/SamplinaNeue</span>, <span class="pl-c1">bold</span>, <span class="pl-c1">italic</span>);</pre></div>
+<p>Rendered as CSS:</p>
+<div class="highlight highlight-source-css"><pre><span class="pl-k">@font-face</span> {
+	<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Samplina Neue<span class="pl-pds">"</span></span>;
+	<span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-c1">italic</span>;
+	<span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-c1">bold</span>;
+	<span class="pl-c1"><span class="pl-c1">src</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/SamplinaNeue.eot?<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>eot<span class="pl-pds">"</span></span>),
+	     <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/SamplinaNeue.woff2<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff2<span class="pl-pds">"</span></span>),
+	     <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/SamplinaNeue.woff<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff<span class="pl-pds">"</span></span>),
+	     <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/SamplinaNeue.ttf<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>truetype<span class="pl-pds">"</span></span>),
+	     <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/SamplinaNeue.svg#Samplina_Neue<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>svg<span class="pl-pds">"</span></span>);
+}</pre></div>
+<hr>
+<p>Create a font face rule that only sources a WOFF.</p>
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@include</span> <span class="pl-c1">font-face</span>(<span class="pl-v">Samplinoff</span>, <span class="pl-v">fonts/Samplinoff</span>, <span class="pl-v">null</span>, <span class="pl-v">null</span>, <span class="pl-v">woff</span>);</pre></div>
+<p>Rendered as CSS:</p>
+<div class="highlight highlight-source-css"><pre><span class="pl-k">@font-face</span> {
+	<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Samplinoff<span class="pl-pds">"</span></span>;
+	<span class="pl-c1"><span class="pl-c1">src</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplinoff.woff<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff<span class="pl-pds">"</span></span>);
+}</pre></div>
+<hr>
+<p>Create a font face rule that applies to 500 weight text and sources EOT, WOFF2, and WOFF.</p>
+<div class="highlight highlight-source-scss"><pre><span class="pl-k">@include</span> <span class="pl-c1">font-face</span>(<span class="pl-v">Samplinal</span>, <span class="pl-v">fonts/Samplinal</span>,<span class="pl-c1"> 500</span>, <span class="pl-c1">normal</span>, <span class="pl-v">eot</span> <span class="pl-v">woff2</span> <span class="pl-v">woff</span>);</pre></div>
+<p>Rendered as CSS:</p>
+<div class="highlight highlight-source-css"><pre><span class="pl-k">@font-face</span> {
+	<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-s"><span class="pl-pds">"</span>Samplinal<span class="pl-pds">"</span></span>;
+	<span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-c1">normal</span>;
+	<span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-c1">500</span>;
+	<span class="pl-c1"><span class="pl-c1">src</span></span>: <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplinal.eot?<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>eot<span class="pl-pds">"</span></span>),
+	     <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplinal.woff2<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff2<span class="pl-pds">"</span></span>),
+	     <span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">"</span>fonts/Samplinal.woff<span class="pl-pds">"</span></span>) <span class="pl-c1">format</span>(<span class="pl-s"><span class="pl-pds">"</span>woff<span class="pl-pds">"</span></span>);
+}</pre></div>
+<h2><a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#notes" aria-hidden="true" class="anchor" id="user-content-notes"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notes</h2>
+<p>IE≥9 prioritizes valid font formats over invalid ones. Therefore, while <code>embedded-opentype</code> is the correct format for an <strong>.eot</strong> font, <code>eot</code> is used to fool modern IE into prioritizing other, newer font formats.</p>
+<p>IE≤8 only supports <strong>.eot</strong> fonts and parses the <code>src</code> property incorrectly, interpreting everything between the first opening parenthesis <code>(</code> and the last closing parenthesis <code>)</code> as a single URL. Therefore, a <code>?</code> is appended to the <strong>.eot</strong>’s URL, fooling older IE into reading all other sources as query parameters.</p>
+</article>
+  </div>
+
+  </div>
+  
+</div>
+
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-_mixins-scss" class="file">
+      <div class="file-header">
+        <div class="file-actions">
+
+          <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/raw/883a5b95e964bf651e505ae4617edbdf37133cde/_mixins.scss" class="btn btn-sm ">Raw</a>
+        </div>
+        <div class="file-info">
+          <span class="icon">
+            <svg aria-hidden="true" class="octicon octicon-gist" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.5 5L10 7.5 7.5 10l-.75-.75L8.5 7.5 6.75 5.75 7.5 5zm-3 0L2 7.5 4.5 10l.75-.75L3.5 7.5l1.75-1.75L4.5 5zM0 13V2c0-.55.45-1 1-1h10c.55 0 1 .45 1 1v11c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1zm1 0h10V2H1v11z"></path></svg>
+          </span>
+          <a class="tooltipped tooltipped-s css-truncate" aria-label="Permalink" href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#file-_mixins-scss">
+            <strong class="user-select-contain gist-blob-name css-truncate-target">
+              _mixins.scss
+            </strong>
+          </a>
+        </div>
+      </div>
+    
+
+  <div itemprop="text" class="blob-wrapper data type-scss">
+      <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-_mixins-scss-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-_mixins-scss-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// =============================================================================</span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-_mixins-scss-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// String Replace</span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-_mixins-scss-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// =============================================================================</span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-_mixins-scss-LC4" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-_mixins-scss-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">@function</span> <span class="pl-c1">str-replace</span>(<span class="pl-smi">$string</span>, <span class="pl-smi">$search</span>, <span class="pl-smi">$replace</span><span class="pl-v">:</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>) {</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-_mixins-scss-LC6" class="blob-code blob-code-inner js-file-line">	<span class="pl-smi">$index</span>: <span class="pl-c1">str-index</span>(<span class="pl-smi">$string</span>, <span class="pl-smi">$search</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-_mixins-scss-LC7" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-_mixins-scss-LC8" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">@if</span> <span class="pl-smi">$index</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-_mixins-scss-LC9" class="blob-code blob-code-inner js-file-line">		<span class="pl-k">@return</span> <span class="pl-c1">str-slice</span>(<span class="pl-smi">$string</span>,<span class="pl-c1"> 1</span>, <span class="pl-smi">$index</span> <span class="pl-c1">- 1</span>) + <span class="pl-smi">$replace</span> + <span class="pl-c1">str-replace</span>(<span class="pl-c1">str-slice</span>(<span class="pl-smi">$string</span>, <span class="pl-smi">$index</span> <span class="pl-v">+</span> <span class="pl-c1">str-length</span>(<span class="pl-smi">$search</span>)), <span class="pl-smi">$search</span>, <span class="pl-smi">$replace</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-_mixins-scss-LC10" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-_mixins-scss-LC11" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-_mixins-scss-LC12" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">@return</span> <span class="pl-smi">$string</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-_mixins-scss-LC13" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-_mixins-scss-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-_mixins-scss-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// =============================================================================</span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-_mixins-scss-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// Font Face</span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-_mixins-scss-LC17" class="blob-code blob-code-inner js-file-line"><span class="pl-c">// =============================================================================</span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-_mixins-scss-LC18" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-_mixins-scss-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-k">@mixin</span> <span class="pl-en">font-face</span>(<span class="pl-smi">$name</span>, <span class="pl-smi">$path</span>, <span class="pl-smi">$weight</span>: null, <span class="pl-smi">$style</span>: null, <span class="pl-smi">$exts</span>: eot woff<span class="pl-c1">2</span> woff ttf svg) {</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-_mixins-scss-LC20" class="blob-code blob-code-inner js-file-line">	<span class="pl-smi">$src</span>: null;</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-_mixins-scss-LC21" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-_mixins-scss-LC22" class="blob-code blob-code-inner js-file-line">	<span class="pl-smi">$extmods</span>: (</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-_mixins-scss-LC23" class="blob-code blob-code-inner js-file-line">		eot: <span class="pl-s"><span class="pl-pds">"</span>?<span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-_mixins-scss-LC24" class="blob-code blob-code-inner js-file-line">		svg: <span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> + <span class="pl-c1">str-replace</span>(<span class="pl-smi">$name</span>, <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>_<span class="pl-pds">"</span></span>)</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-_mixins-scss-LC25" class="blob-code blob-code-inner js-file-line">	);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-_mixins-scss-LC26" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-_mixins-scss-LC27" class="blob-code blob-code-inner js-file-line">	<span class="pl-smi">$formats</span>: (</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-_mixins-scss-LC28" class="blob-code blob-code-inner js-file-line">		otf: <span class="pl-s"><span class="pl-pds">"</span>opentype<span class="pl-pds">"</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-_mixins-scss-LC29" class="blob-code blob-code-inner js-file-line">		ttf: <span class="pl-s"><span class="pl-pds">"</span>truetype<span class="pl-pds">"</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-_mixins-scss-LC30" class="blob-code blob-code-inner js-file-line">	);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-_mixins-scss-LC31" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-_mixins-scss-LC32" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">@each</span> <span class="pl-smi">$ext</span> <span class="pl-k">in</span> <span class="pl-smi">$exts</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L33" class="blob-num js-line-number" data-line-number="33"></td>
+        <td id="file-_mixins-scss-LC33" class="blob-code blob-code-inner js-file-line">		<span class="pl-smi">$extmod</span>: <span class="pl-c1">if</span>(<span class="pl-c1">map-has-key</span>(<span class="pl-smi">$extmods</span>, <span class="pl-smi">$ext</span>), <span class="pl-smi">$ext</span> <span class="pl-v">+</span> <span class="pl-c1">map-get</span>(<span class="pl-smi">$extmods</span>, <span class="pl-smi">$ext</span>), <span class="pl-smi">$ext</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L34" class="blob-num js-line-number" data-line-number="34"></td>
+        <td id="file-_mixins-scss-LC34" class="blob-code blob-code-inner js-file-line">		<span class="pl-smi">$format</span>: <span class="pl-c1">if</span>(<span class="pl-c1">map-has-key</span>(<span class="pl-smi">$formats</span>, <span class="pl-smi">$ext</span>), <span class="pl-c1">map-get</span>(<span class="pl-smi">$formats</span>, <span class="pl-smi">$ext</span>), <span class="pl-smi">$ext</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L35" class="blob-num js-line-number" data-line-number="35"></td>
+        <td id="file-_mixins-scss-LC35" class="blob-code blob-code-inner js-file-line">		<span class="pl-smi">$src</span>: <span class="pl-c1">append</span>(<span class="pl-smi">$src</span>, <span class="pl-c1">url</span>(<span class="pl-c1">quote</span>(<span class="pl-smi">$path</span> <span class="pl-v">+</span> <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span> <span class="pl-v">+</span> <span class="pl-smi">$extmod</span>)) <span class="pl-c1">format</span>(<span class="pl-c1">quote</span>(<span class="pl-smi">$format</span>)), <span class="pl-v">comma</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L36" class="blob-num js-line-number" data-line-number="36"></td>
+        <td id="file-_mixins-scss-LC36" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L37" class="blob-num js-line-number" data-line-number="37"></td>
+        <td id="file-_mixins-scss-LC37" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L38" class="blob-num js-line-number" data-line-number="38"></td>
+        <td id="file-_mixins-scss-LC38" class="blob-code blob-code-inner js-file-line">	<span class="pl-k">@font-face</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L39" class="blob-num js-line-number" data-line-number="39"></td>
+        <td id="file-_mixins-scss-LC39" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1"><span class="pl-c1">font-family</span></span>: <span class="pl-c1">quote</span>(<span class="pl-smi">$name</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L40" class="blob-num js-line-number" data-line-number="40"></td>
+        <td id="file-_mixins-scss-LC40" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1"><span class="pl-c1">font-style</span></span>: <span class="pl-smi">$style</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L41" class="blob-num js-line-number" data-line-number="41"></td>
+        <td id="file-_mixins-scss-LC41" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1"><span class="pl-c1">font-weight</span></span>: <span class="pl-smi">$weight</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L42" class="blob-num js-line-number" data-line-number="42"></td>
+        <td id="file-_mixins-scss-LC42" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1"><span class="pl-c1">src</span></span>: <span class="pl-smi">$src</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L43" class="blob-num js-line-number" data-line-number="43"></td>
+        <td id="file-_mixins-scss-LC43" class="blob-code blob-code-inner js-file-line">	}</td>
+      </tr>
+      <tr>
+        <td id="file-_mixins-scss-L44" class="blob-num js-line-number" data-line-number="44"></td>
+        <td id="file-_mixins-scss-LC44" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+  
+</div>
+
+
+    <a name="comments"></a>
+    <div class="discussion-timeline gist-discussion-timeline js-quote-selection-container ">
+      <div class="js-discussion js-socket-channel" data-channel="marked-as-read:gist:17889312">
+        
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/WhiteBeetle">
+      <img alt="@WhiteBeetle" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/10378410" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1365310" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="eccacb09fb485ea758e24b4049db6a6a">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/WhiteBeetle" class="author">WhiteBeetle</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1365310" class="timestamp"><relative-time datetime="2015-01-03T06:09:24Z" title="3 de jan de 2015 04:09 BRST">on 3 Jan 2015</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Hey, Djb... Love the heart. Gotta admit I'm catching up fast with my limited and geofenced redirected bogus app store apps and all the rest. Not bad eh? MKA- Mobility Kit for Android? Wag? Windows Android Grant? We are Global? What about Grant?</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/Leaderproxima">
+      <img alt="@Leaderproxima" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/11467369" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1597763" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="194f58579de07c1306cde7f8abd86c84">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/Leaderproxima" class="author">Leaderproxima</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1597763" class="timestamp"><relative-time datetime="2015-10-16T08:33:21Z" title="16 de out de 2015 05:33 BRT">on 16 Oct 2015</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Hi,</p>
+<p>I'm trying to use this mixin on my stylesheet but i've encountered an issue. When choosing a font that is in a higher directory (eg. one folder up) then it encounters an issue at compile.</p>
+<p>What I want it to display:</p>
+<pre><code>@font-face {
+  font-family: "SoftElegance";
+  src: url("../fonts/SoftElegance.ttf") format("truetype"); }
+</code></pre>
+<p>The "../" breaks the mixin and doesn't allow it to compile. Anyway to include the ability to use parent directories instead of having to have the fonts folder inside my css folder?</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/inseldesign">
+      <img alt="@inseldesign" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/5708900" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1648335" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="b62446a86fa932c955b629ab6a65caf1">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/inseldesign" class="author">inseldesign</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1648335" class="timestamp"><relative-time datetime="2015-12-13T17:27:06Z" title="13 de dez de 2015 15:27 BRST">on 13 Dec 2015</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>It works for me with <a href="https://github.com/include" class="user-mention">@include</a> font-face(Samplino, "../fonts/Samplino");</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/DerExilant">
+      <img alt="@DerExilant" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/16876665" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1679208" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="0d8ceb0ff7b164530f702bc52ce9ff9b">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/DerExilant" class="author">DerExilant</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1679208" class="timestamp"><relative-time datetime="2016-01-25T09:31:01Z" title="25 de jan de 2016 07:31 BRST">on 25 Jan 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>I do also have a problem with the code. It says:<br>
+<strong>Invalid CSS after "... $replace: "") ": expected expression (e.g. 1px, bold), was "{")</strong></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/anup04sust">
+      <img alt="@anup04sust" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/2149095" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1695640" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="72b1295c64c384ce114c42666c2f56f3">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/anup04sust" class="author">anup04sust</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1695640" class="timestamp"><relative-time datetime="2016-02-12T10:11:41Z" title="12 de fev de 2016 08:11 BRST">on 12 Feb 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>I do also have a problem with the code. It says<br>
+Syntax error: Invalid CSS after "       eot": expected ")", was ": "?","<br>
+on line 23 of []/scss/mixin/_fontface.scss</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/mamsoudi">
+      <img alt="@mamsoudi" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/8385009" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1727679" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="7a2c7464a0e5d8483036336c0a2a5836">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/mamsoudi" class="author">mamsoudi</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1727679" class="timestamp"><relative-time datetime="2016-03-18T12:45:21Z" title="18 de mar de 2016 09:45 BRT">on 18 Mar 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Thank you for the mixin! Works perfectly!</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/fabiowitt">
+      <img alt="@fabiowitt" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/4381945" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1737781" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="83bab6376450f9f9500735fa437998d7">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/fabiowitt" class="author">fabiowitt</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1737781" class="timestamp"><relative-time datetime="2016-03-30T14:20:08Z" title="30 de mar de 2016 11:20 BRT">on 30 Mar 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Nice job!</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/sjdeere">
+      <img alt="@sjdeere" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/2814873" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1748804" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="35bc840e72aa6e8b97346f867ea095be">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/sjdeere" class="author">sjdeere</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1748804" class="timestamp"><relative-time datetime="2016-04-12T11:50:32Z" title="12 de abr de 2016 08:50 BRT">on 12 Apr 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>what if there is no woff2<br>
+<a href="https://github.com/include" class="user-mention">@include</a> font-face("name", "<a href="https://cdn.domain/fonts/fontname_LT_4">https://cdn.domain/fonts/fontname_LT_4</a>_, 400", normal, eot woff ttf svg);</p>
+<p>i look at the output and woff2 is also output</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/obcidio">
+      <img alt="@obcidio" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/1107877" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1749305" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="1126e9fb1a952899824128108331363a">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/obcidio" class="author">obcidio</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1749305" class="timestamp"><relative-time datetime="2016-04-12T20:51:15Z" title="12 de abr de 2016 17:51 BRT">on 12 Apr 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Beautiful.</p>
+<p>For anyone else's info, place your paths in quotes and as another variable. Also, remember the path is relative to the final destination of the output css file(s).</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/vishalPGit">
+      <img alt="@vishalPGit" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/19833166" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1797488" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="698b10b19e866ef307112edfe0eb3f8e">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/vishalPGit" class="author">vishalPGit</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1797488" class="timestamp"><relative-time datetime="2016-06-09T07:24:49Z" title="9 de jun de 2016 04:24 BRT">on 9 Jun 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Use <a href="https://github.com/include" class="user-mention">@include</a> font-face(Samplino, "../fonts/Samplino")  instead of <a href="https://github.com/include" class="user-mention">@include</a> font-face(Samplino, ../fonts/Samplino) and its working for me.<br>
+Thanks</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/surayashivji">
+      <img alt="@surayashivji" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/12003060" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1865866" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="4fc7264369f8731b99367c89cd27510e">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/surayashivji" class="author">surayashivji</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1865866" class="timestamp"><relative-time datetime="2016-09-04T07:56:59Z" title="4 de set de 2016 04:56 BRT">on 4 Sep 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>If we create this as an <a href="https://github.com/function" class="user-mention">@function</a> instead of an <a href="https://github.com/mixin" class="user-mention">@mixin</a> to create font variables, is it syntactically correct to say</p>
+<p><a href="https://github.com/return" class="user-mention">@return</a> <a href="https://github.com/font-face" class="user-mention">@font-face</a> {<br>
+font-family : quote($name); // add quotes to name string<br>
+font-style: $style;<br>
+font-weight: $weight;<br>
+src: $src;<br>
+}</p>
+<p>also, does the mixin's name, font-face have anything to do with setting the font-face's values at the end of the mixin?</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/vovan4">
+      <img alt="@vovan4" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/11579290" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1888766" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="87e5dc8644957cc11991ef14e2c372ab">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/vovan4" class="author">vovan4</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1888766" class="timestamp"><relative-time datetime="2016-10-03T14:03:23Z" title="3 de out de 2016 11:03 BRT">on 3 Oct 2016</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>=font-face($font-family, $file-path, $font-weight: normal, $font-style: normal)<br>
+<a href="https://github.com/font-face" class="user-mention">@font-face</a><br>
+font-family: $font-family<br>
+src: url('#{$file-path}.eot')<br>
+src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg')<br>
+font-weight: $font-weight<br>
+font-style: $font-style</p>
+<p>// Chrome for Windows rendering fix: <a href="http://www.adtrak.co.uk/blog/font-face-chrome-rendering/">http://www.adtrak.co.uk/blog/font-face-chrome-rendering/</a><br>
+<a href="https://github.com/media" class="user-mention">@media</a> screen and (-webkit-min-device-pixel-ratio: 0)<br>
+<a href="https://github.com/font-face" class="user-mention">@font-face</a><br>
+font-family: $font-family<br>
+src: url('#{$file-path}.svg##{$font-family}') format('svg')</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/edkf">
+      <img alt="@edkf" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/3325227" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-1982584" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="bca42dd52581776890bedb7f82158366">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/edkf" class="author">edkf</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-1982584" class="timestamp"><relative-time datetime="2017-01-27T23:50:53Z" title="27 de jan de 2017 21:50 BRST">on 27 Jan</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>Helpful. Thanks!</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/rahulraguvanshi">
+      <img alt="@rahulraguvanshi" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/26078382" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-2013226" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="3b603e6f5e03f9bb1bfefeba89070adc">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/rahulraguvanshi" class="author">rahulraguvanshi</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-2013226" class="timestamp"><relative-time datetime="2017-02-28T05:53:35Z" title="28 de fev de 2017 02:53 BRT">on 28 Feb</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>I used <a href="https://github.com/include" class="user-mention">@include</a> font-face("Font-Name", ../fonts/Font-Name, null);<br>
+Error: Invalid CSS after "fontname": expected expression</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/Titoratus">
+      <img alt="@Titoratus" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/19709776" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-2102538" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="91f626c2b370c15771b78c45cb23257f">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/Titoratus" class="author">Titoratus</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-2102538" class="timestamp"><relative-time datetime="2017-05-22T09:32:07Z" title="22 de mai de 2017 06:32 BRT">on 22 May</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>It works fine! Just <strong>DO NOT</strong> create .sass file, but .scss. Click "Download ZIP", import _<em>mixins.scss</em> into your folder, include it in main .sass file (<a href="https://github.com/import" class="user-mention">@import</a> '_mixins.scss' or <a href="https://github.com/import" class="user-mention">@import</a> 'mixins.scss' [it's no difference]). Then include your fonts.<br>
+For me it's not working — <a href="https://github.com/include" class="user-mention">@include</a> font-face(RobotoCondensed, fonts/RobotoCondensed);<br>
+But <em>it</em> works — <a href="https://github.com/include" class="user-mention">@include</a> font-face(RobotoCondensed, "../fonts/RobotoCondensed/RobotoCondensed", null, null, ttf woff woff2);<br>
+Notice that ttf has to be first!</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+  
+  <div class="timeline-comment-wrapper js-comment-container">
+
+    
+
+<div class="avatar-parent-child timeline-comment-avatar">
+    <a href="https://gist.github.com/mattmartini">
+      <img alt="@mattmartini" class="avatar rounded-1" height="44" src="./SASS @font-face mixin_files/53050" width="44">
+    </a>
+
+</div>
+
+
+
+      
+<div id="gistcomment-2117887" class="comment previewable-edit js-comment js-task-list-container timeline-comment js-reorderable-task-lists reorderable-task-lists " data-body-version="fd62b04fbe5aea5efde04eac6ca20606">
+
+  
+<div class="timeline-comment-header">
+  <div class="timeline-comment-actions">
+    
+
+<!--
+Reactions should always be at the top-level, outside of the dropdown.
+Until we find a better solution to show team discussion comment states, Pin and Subscribe will also stay outside the dropdown.
+-->
+
+
+
+
+
+
+  </div>
+
+    
+
+
+
+  <h3 class="timeline-comment-header-text f5 text-normal">
+
+    <strong>
+      
+
+  <a href="https://gist.github.com/mattmartini" class="author">mattmartini</a>
+  
+
+    </strong>
+
+    commented
+
+    <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6#gistcomment-2117887" class="timestamp"><relative-time datetime="2017-06-08T04:35:59Z" title="8 de jun de 2017 01:35 BRT">on 8 Jun</relative-time></a>
+
+
+
+  </h3>
+</div>
+
+
+  <div class="edit-comment-hide">
+    <table class="d-block">
+      <tbody class="d-block">
+        <tr class="d-block">
+          <td class="d-block comment-body markdown-body  js-comment-body">
+              <p>To make this work with asset pipeline in Rails 4.2 I changed <code>url</code> to <code>font-url</code>.</p>
+<p><code>$src: append($src, font-url(quote($path + "." + $extmod)) format(quote($format)), comma);</code></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+  </div>
+
+
+
+<!-- Rendered timeline since 2017-10-02 09:47:01 -->
+<div id="partial-timeline-marker" class="js-timeline-marker js-updatable-content" data-url="/jonathantneal/d0460e5c2d5d7f9bc5e6/show_partial?partial=gist%2Ftimeline_marker&amp;since=1506962821" data-last-modified="Mon, 02 Oct 2017 16:47:01 GMT">
+</div>
+
+
+        <div class="discussion-timeline-actions">
+            <div class="timeline-comment-wrapper timeline-new-comment js-comment-container">
+  <a href="https://gist.github.com/paulo70"><img alt="@paulo70" class="timeline-comment-avatar" height="44" src="./SASS @font-face mixin_files/1468431(1)" width="44"></a>
+
+  <!-- '"` --><!-- </textarea></xmp> --><form accept-charset="UTF-8" action="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6/comments" class="js-new-comment-form" data-remote="true" data-type="json" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="YWoAPz8G2vpZ4a0uXevJ6S/e1pqGwQTG41SK4i1a9Y9deFKGnnUooABt2oPzXTKcUn6Aiif4z4fbkm9XoJRFug=="></div>
+    <div class="timeline-comment">
+      <div class="js-suggester-container  js-previewable-comment-form previewable-comment-form write-selected" data-preview-url="/preview?markdown_unsupported=false&amp;subject=d0460e5c2d5d7f9bc5e6&amp;subject_type=Gist" data-preview-authenticity-token="mQ40bRo4u6ZTRgUmN6dpVBM2COR0Y1l+z9+2Hp8u8XMNHcKdoi+Lxe5dVENpdVvJrBHKAGigqZtWe+VouAfZBg==">
+  <div class="comment-form-head tabnav">
+      <div class="js-toolbar toolbar-commenting">
+  <div class="toolbar-group">
+    <div class="toolbar-item dropdown js-menu-container">
+      <button type="button" tabindex="-1" class="js-menu-target menu-target tooltipped tooltipped-n" aria-label="Add header text" aria-expanded="false" aria-haspopup="true">
+        <svg aria-hidden="true" class="octicon octicon-text-size" height="16" version="1.1" viewBox="0 0 18 16" width="18"><path fill-rule="evenodd" d="M13.62 9.08L12.1 3.66h-.06l-1.5 5.42h3.08zM5.7 10.13S4.68 6.52 4.53 6.02h-.08l-1.13 4.11H5.7zM17.31 14h-2.25l-.95-3.25h-4.07L9.09 14H6.84l-.69-2.33H2.87L2.17 14H0l3.3-9.59h2.5l2.17 6.34L10.86 2h2.52l3.94 12h-.01z"></path></svg>
+        <span class="dropdown-caret"></span>
+      </button>
+
+      <div class="dropdown-menu-content js-menu-content">
+        <ul class="dropdown-menu dropdown-menu-s">
+          <button type="button" class="js-toolbar-item dropdown-item dropdown-header1" data-prefix="# " data-ga-click="Markdown Toolbar, click, header1">
+            Header
+          </button>
+          <button type="button" class="js-toolbar-item dropdown-item dropdown-header2" data-prefix="## " data-ga-click="Markdown Toolbar, click, header2">
+            Header
+          </button>
+          <button type="button" class="js-toolbar-item dropdown-item dropdown-header3" data-prefix="### " data-ga-click="Markdown Toolbar, click, header3">
+            Header
+          </button>
+        </ul>
+      </div>
+    </div>
+
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Add bold text &lt;ctrl+b&gt;" data-prefix="**" data-suffix="**" data-toolbar-hotkey="b" data-ga-click="Markdown Toolbar, click, bold" data-trim-first="">
+      <svg aria-hidden="true" class="octicon octicon-bold" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M1 2h3.83c2.48 0 4.3.75 4.3 2.95 0 1.14-.63 2.23-1.67 2.61v.06c1.33.3 2.3 1.23 2.3 2.86 0 2.39-1.97 3.52-4.61 3.52H1V2zm3.66 4.95c1.67 0 2.38-.66 2.38-1.69 0-1.17-.78-1.61-2.34-1.61H3.13v3.3h1.53zm.27 5.39c1.77 0 2.75-.64 2.75-1.98 0-1.27-.95-1.81-2.75-1.81h-1.8v3.8h1.8v-.01z"></path></svg>
+    </button>
+
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Add italic text &lt;ctrl+i&gt;" data-prefix="_" data-suffix="_" data-toolbar-hotkey="i" data-ga-click="Markdown Toolbar, click, italic" data-trim-first="">
+      <svg aria-hidden="true" class="octicon octicon-italic" height="16" version="1.1" viewBox="0 0 6 16" width="6"><path fill-rule="evenodd" d="M2.81 5h1.98L3 14H1l1.81-9zm.36-2.7c0-.7.58-1.3 1.33-1.3.56 0 1.13.38 1.13 1.03 0 .75-.59 1.3-1.33 1.3-.58 0-1.13-.38-1.13-1.03z"></path></svg>
+    </button>
+  </div>
+
+  <div class="toolbar-group">
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Insert a quote" data-prefix="&gt; " data-multiline="true" data-ga-click="Markdown Toolbar, click, quote" data-surround-with-newlines="">
+      <svg aria-hidden="true" class="octicon octicon-quote" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M6.16 3.5C3.73 5.06 2.55 6.67 2.55 9.36c.16-.05.3-.05.44-.05 1.27 0 2.5.86 2.5 2.41 0 1.61-1.03 2.61-2.5 2.61-1.9 0-2.99-1.52-2.99-4.25 0-3.8 1.75-6.53 5.02-8.42L6.16 3.5zm7 0c-2.43 1.56-3.61 3.17-3.61 5.86.16-.05.3-.05.44-.05 1.27 0 2.5.86 2.5 2.41 0 1.61-1.03 2.61-2.5 2.61-1.89 0-2.98-1.52-2.98-4.25 0-3.8 1.75-6.53 5.02-8.42l1.14 1.84h-.01z"></path></svg>
+    </button>
+
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Insert code" data-prefix="`" data-suffix="`" data-block-prefix="```" data-block-suffix="```" data-ga-click="Markdown Toolbar, click, code">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
+    </button>
+
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Add a link &lt;ctrl+k&gt;" data-prefix="[" data-suffix="](url)" data-replace-next="url" data-toolbar-hotkey="k" data-scan-for="https?://" data-ga-click="Markdown Toolbar, click, link">
+      <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
+    </button>
+  </div>
+
+  <div class="toolbar-group">
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Add a bulleted list" data-multiline="true" data-prefix="- " data-ga-click="Markdown Toolbar, click, unordered list" data-surround-with-newlines="">
+      <svg aria-hidden="true" class="octicon octicon-list-unordered" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M2 13c0 .59 0 1-.59 1H.59C0 14 0 13.59 0 13c0-.59 0-1 .59-1h.81c.59 0 .59.41.59 1H2zm2.59-9h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1H4.59C4 2 4 2.41 4 3c0 .59 0 1 .59 1zM1.41 7H.59C0 7 0 7.41 0 8c0 .59 0 1 .59 1h.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1h.01zm0-5H.59C0 2 0 2.41 0 3c0 .59 0 1 .59 1h.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1h.01zm10 5H4.59C4 7 4 7.41 4 8c0 .59 0 1 .59 1h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1h.01zm0 5H4.59C4 12 4 12.41 4 13c0 .59 0 1 .59 1h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1h.01z"></path></svg>
+    </button>
+    <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Add a numbered list" data-prefix="1. " data-multiline="true" data-ga-click="Markdown Toolbar, click, ordered list" data-ordered-list="">
+      <svg aria-hidden="true" class="octicon octicon-list-ordered" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 13c0 .59 0 1-.59 1H4.59C4 14 4 13.59 4 13c0-.59 0-1 .59-1h6.81c.59 0 .59.41.59 1H12zM4.59 4h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1H4.59C4 2 4 2.41 4 3c0 .59 0 1 .59 1zm6.81 3H4.59C4 7 4 7.41 4 8c0 .59 0 1 .59 1h6.81c.59 0 .59-.41.59-1 0-.59 0-1-.59-1zM2 1h-.72c-.3.19-.58.25-1.03.34V2H1v2.14H.16V5H3v-.86H2V1zm.25 8.13c-.17 0-.45.03-.66.06.53-.56 1.14-1.25 1.14-1.89C2.71 6.52 2.17 6 1.37 6c-.59 0-.97.2-1.38.64l.58.58c.19-.19.38-.38.64-.38.28 0 .48.16.48.52 0 .53-.77 1.2-1.7 2.06V10h3l-.09-.88h-.66l.01.01zm-.08 3.78v-.03c.44-.19.64-.47.64-.86 0-.7-.56-1.11-1.44-1.11-.48 0-.89.19-1.28.52l.55.64c.25-.2.44-.31.69-.31.27 0 .42.13.42.36 0 .27-.2.44-.86.44v.75c.83 0 .98.17.98.47 0 .25-.23.38-.58.38-.28 0-.56-.14-.81-.38l-.48.66c.3.36.77.56 1.41.56.83 0 1.53-.41 1.53-1.16 0-.5-.31-.81-.77-.94v.01z"></path></svg>
+    </button>
+
+      <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-n" aria-label="Add a task list" data-prefix="- [ ] " data-toolbar-hotkey="L" data-multiline="" data-ga-click="Markdown Toolbar, click, task list" data-surround-with-newlines="">
+        <svg aria-hidden="true" class="octicon octicon-tasklist" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15.41 9H7.59C7 9 7 8.59 7 8c0-.59 0-1 .59-1h7.81c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM9.59 4C9 4 9 3.59 9 3c0-.59 0-1 .59-1h5.81c.59 0 .59.41.59 1 0 .59 0 1-.59 1H9.59zM0 3.91l1.41-1.3L3 4.2 7.09 0 8.5 1.41 3 6.91l-3-3zM7.59 12h7.81c.59 0 .59.41.59 1 0 .59 0 1-.59 1H7.59C7 14 7 13.59 7 13c0-.59 0-1 .59-1z"></path></svg>
+      </button>
+  </div>
+
+  <div class="toolbar-group">
+
+      <div class="toolbar-item select-menu select-menu-modal-right js-menu-container js-select-menu js-load-contents js-saved-reply-container" data-contents-url="/settings/replies?context=none">
+
+        <button type="button" tabindex="-1" class="js-menu-target menu-target tooltipped tooltipped-nw" aria-label="Insert a reply" aria-expanded="false" aria-haspopup="true" data-ga-click="Markdown Toolbar, click, saved reply">
+          <svg aria-hidden="true" class="octicon octicon-reply" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M6 3.5c3.92.44 8 3.125 8 10-2.312-5.062-4.75-6-8-6V11L.5 5.5 6 0v3.5z"></path></svg>
+          <span class="dropdown-caret"></span>
+        </button>
+
+        <div class="select-menu-modal-holder js-menu-content js-navigation-container">
+          <div class="select-menu-modal">
+            <div class="select-menu-header">
+              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+              <span class="select-menu-title">Select a reply</span>
+            </div>
+            <div class="js-select-menu-deferred-content"></div>
+            <div class="select-menu-loading-overlay anim-pulse">
+              <svg aria-hidden="true" class="octicon octicon-octoface" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-nw" aria-label="Directly mention a user or team" data-prefix="@" data-prefix-space="" data-ga-click="Markdown Toolbar, click, mention">
+        <svg aria-hidden="true" class="octicon octicon-mention" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M6.58 15c1.25 0 2.52-.31 3.56-.94l-.42-.94c-.84.52-1.89.83-3.03.83-3.23 0-5.64-2.08-5.64-5.72 0-4.37 3.23-7.18 6.58-7.18 3.45 0 5.22 2.19 5.22 5.2 0 2.39-1.34 3.86-2.5 3.86-1.05 0-1.36-.73-1.05-2.19l.73-3.75H8.98l-.11.72c-.41-.63-.94-.83-1.56-.83-2.19 0-3.66 2.39-3.66 4.38 0 1.67.94 2.61 2.3 2.61.84 0 1.67-.53 2.3-1.25.11.94.94 1.45 1.98 1.45 1.67 0 3.77-1.67 3.77-5C14 2.61 11.59 0 7.83 0 3.66 0 0 3.33 0 8.33 0 12.71 2.92 15 6.58 15zm-.31-5c-.73 0-1.36-.52-1.36-1.67 0-1.45.94-3.22 2.41-3.22.52 0 .84.2 1.25.83l-.52 3.02c-.63.73-1.25 1.05-1.78 1.05V10z"></path></svg>
+      </button>
+
+      <button type="button" tabindex="-1" class="js-toolbar-item toolbar-item tooltipped tooltipped-nw" aria-label="Reference an issue or pull request" data-prefix="#" data-prefix-space="" data-ga-click="Markdown Toolbar, click, reference">
+        <svg aria-hidden="true" class="octicon octicon-bookmark" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M9 0H1C.27 0 0 .27 0 1v15l5-3.09L10 16V1c0-.73-.27-1-1-1zm-.78 4.25L6.36 5.61l.72 2.16c.06.22-.02.28-.2.17L5 6.6 3.12 7.94c-.19.11-.25.05-.2-.17l.72-2.16-1.86-1.36c-.17-.16-.14-.23.09-.23l2.3-.03.7-2.16h.25l.7 2.16 2.3.03c.23 0 .27.08.09.23h.01z"></path></svg>
+      </button>
+  </div>
+</div>
+
+      <nav class="tabnav-tabs" role="tablist">
+        <button type="button" class="btn-link tabnav-tab write-tab js-write-tab selected " role="tab" aria-selected="true">Write</button>
+        <button type="button" class="btn-link tabnav-tab preview-tab js-preview-tab " role="tab">Preview</button>
+      </nav>
+  </div>
+
+
+  <div class="comment-form-error js-comment-form-error" style="display:none">    There was an error creating your Gist.
+</div>
+  <div class="write-content js-write-bucket js-uploadable-container js-upload-markdown-image is-default upload-enabled" data-upload-policy-url="/upload/policies/assets" data-upload-policy-authenticity-token="rsAn3BOkuVoGV5HypZEzxyi+5dPUYORCPF8RUr11JmZtfHCgHjrb2MuXUBEIgdHF4rV1Rhj4b/Cqs8ylVtsoSg==">
+
+    <input type="hidden" name="saved_reply_id" class="js-saved-reply-id js-resettable-field" value="" data-reset-value="">
+
+    <textarea name="comment[body]" id="new_comment_field" placeholder="Leave a comment" aria-label="Comment body" class="form-control input-contrast comment-form-textarea js-comment-field js-improved-comment-field js-task-list-field js-quick-submit js-size-to-fit js-suggester-field js-quote-selection-target js-session-resumable"></textarea>
+
+        <p class="drag-and-drop position-relative">
+    <input accept=".gif,.jpg,.png,.docx,.gz,.log,.pdf,.pptx,.txt,.xlsx,.zip" type="file" multiple="multiple" class="manual-file-chooser top-0 right-0 bottom-0 left-0 width-full ml-0 js-manual-file-chooser" aria-label="Attach files to your comment">
+    <span class="default">
+        Attach files by dragging &amp; dropping,
+        <span class="btn-link manual-file-chooser-text">selecting them</span>, or pasting
+        from the clipboard.
+    </span>
+    <span class="loading">
+      <img alt="" height="16" src="./SASS @font-face mixin_files/octocat-spinner-32.gif" width="16"> Uploading your files…
+    </span>
+    <span class="error bad-file">
+      We don’t support that file type.
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again</button> with a
+        GIF, JPG, PNG, DOCX, GZ, LOG, PDF, PPTX, TXT, XLSX or ZIP.
+      </span>
+    </span>
+    <span class="error bad-permissions">
+      Attaching documents requires write permission to this repository.
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again</button> with a GIF, JPG, PNG, DOCX, GZ, LOG, PDF, PPTX, TXT, XLSX or ZIP.
+      </span>
+    </span>
+    <span class="error repository-required">
+      We don’t support that file type.
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again</button> with a GIF, JPG, PNG, DOCX, GZ, LOG, PDF, PPTX, TXT, XLSX or ZIP.
+      </span>
+    </span>
+    <span class="error too-big">
+      Yowza, that’s a big file
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again</button> with a file smaller than 10MB.
+      </span>
+    </span>
+    <span class="error empty">
+      This file is empty.
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again</button> with a file that’s not empty.
+      </span>
+    </span>
+    <span class="error hidden-file">
+      This file is hidden.
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again</button> with another file.
+      </span>
+    </span>
+    <span class="error failed-request">
+      Something went really wrong, and we can’t process that file.
+      <span class="drag-and-drop-error-info">
+        <button type="button" class="btn-link manual-file-chooser-text">Try again.</button>
+      </span>
+    </span>
+  </p>
+
+
+    <div class="suggester-container">
+      <div class="suggester js-suggester js-navigation-container" data-url="/jonathantneal/d0460e5c2d5d7f9bc5e6/suggestions">
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-content">
+    <div class="comment">
+  <div class="comment-body markdown-body js-preview-body">
+    <p>Nothing to preview</p>
+  </div>
+</div>
+
+  </div>
+
+  <div class="float-left">
+      <a class="tabnav-extra" href="https://guides.github.com/features/mastering-markdown/" target="_blank" data-ga-click="Markdown Toolbar, click, help">
+        <svg aria-hidden="true" class="octicon octicon-markdown v-align-bottom" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path></svg>
+        Styling with Markdown is supported
+      </a>
+  </div>
+
+
+  <div class="comment-form-error comment-form-bottom js-comment-update-error"></div>
+</div>
+
+
+      <div class="form-actions">
+        <div id="partial-new-comment-form-actions">
+  <button type="submit" class="btn btn-primary" data-disable-with="" data-disable-invalid="">
+    Comment
+  </button>
+</div>
+
+      </div>
+    </div>
+</form></div>
+
+        </div>
+      </div>
+    </div>
+</div>
+  </div>
+
+  <div class="modal-backdrop js-touch-events"></div>
+</div><!-- /.container -->
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">© 2017 <span title="0.43988s from unicorn-214572990-dqbzx">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li class="mr-3"><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li class="mr-3"><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage" class="footer-octicon" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+    <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li class="mr-3"><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li class="mr-3"><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li class="mr-3"><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"></path></svg>
+    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha256-2wbV5cxQi1mj1tFsIrtSMAXKn8DFE8uwObMqJSBLa+c=" src="./SASS @font-face mixin_files/frameworks-db06d5e5cc508b59a3d6d16c22bb523005ca9fc0c513cbb039b32a25204b6be7.js"></script>
+    
+    <script async="async" crossorigin="anonymous" integrity="sha256-5oIKFea4ym3tGddTwXN4SqIYhFleJpcvCSI/jA+wask=" src="./SASS @font-face mixin_files/github-e6820a15e6b8ca6ded19d753c173784aa21884595e26972f09223f8c0fb06ac9.js"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"></path></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+    </button>
+  </div>
+</div>
+
+
+  
+
+
+</body></html>
