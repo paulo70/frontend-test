@@ -4,7 +4,6 @@ import * as components from './components';
   const app = (function() {
 
     const container = doc.querySelector('[data-js="container"]');
-    const fragment = doc.createDocumentFragment();
     const ajx = new XMLHttpRequest();
 
     function requestData() {
