@@ -226,14 +226,22 @@ body {
         background: #e6e5e6; }
         .box-common:hover .tip-content .divider {
           border: 1px solid #ffffff;
-          height: 4.333em; }
+          height: 3.875em; }
+        .box-common:hover .tip-content .likes {
+          font-size: 0.625em; }
+          .box-common:hover .tip-content .likes + .likes {
+            left: 3.438em; }
+        .box-common:hover .tip-content .results span {
+          margin-left: 0.625em; }
+          .box-common:hover .tip-content .results span + span {
+            margin-left: 0.625em; }
         .box-common:hover .tip-content:before {
           border-right-color: transparent;
           border-left-color: transparent;
           border-bottom-color: transparent;
           border-top-color: #9d9d9d;
-          top: 69px;
-          left: 73px; } }
+          top: 62px;
+          left: 56px; } }
     @media (min-width: 767px) and (max-width: 1024px) {
       .box-common:hover .tip-content {
         display: block;
@@ -245,14 +253,14 @@ body {
         background: #e6e5e6; }
         .box-common:hover .tip-content .divider {
           border: 1px solid #ffffff;
-          height: 4.333em; }
+          height: 3.875em; }
         .box-common:hover .tip-content:before {
           border-right-color: transparent;
           border-left-color: transparent;
           border-bottom-color: transparent;
           border-top-color: #9d9d9d;
-          top: 69px;
-          left: 73px; } }
+          top: 62px;
+          left: 65px; } }
     @media (min-width: 1174px) {
       .box-common:hover .tip-content {
         display: block;
