@@ -183,6 +183,12 @@ body {
     @media (max-width: 480px) {
       .box-common:hover .tip-content {
         display: none; } }
+    @media (max-width: 320px) {
+      .box-common:hover .tip-content {
+        display: none; } }
+    @media (min-width: 480px) {
+      .box-common:hover .tip-content {
+        display: none; } }
     @media (min-width: 767px) and (max-width: 1024px) {
       .box-common:hover .tip-content {
         display: none; } }
@@ -230,18 +236,42 @@ body {
         .box-common:hover .tip-content .likes {
           font-size: 0.625em; }
           .box-common:hover .tip-content .likes + .likes {
-            left: 3.438em; }
+            left: 24%; }
         .box-common:hover .tip-content .results span {
           margin-left: 0.625em; }
           .box-common:hover .tip-content .results span + span {
-            margin-left: 0.625em; }
+            margin-left: 1.125em; }
         .box-common:hover .tip-content:before {
           border-right-color: transparent;
           border-left-color: transparent;
           border-bottom-color: transparent;
           border-top-color: #9d9d9d;
           top: 62px;
-          left: 56px; } }
+          left: 40%; } }
+    @media (max-width: 320px) {
+      .box-common:hover .tip-content {
+        display: block; }
+        .box-common:hover .tip-content .likes {
+          left: 0.750em; }
+          .box-common:hover .tip-content .likes + .likes {
+            left: 1.750em; }
+        .box-common:hover .tip-content .results span {
+          font-size: 0.875em;
+          margin-left: 0.500em; }
+          .box-common:hover .tip-content .results span + span {
+            margin-left: 0.250em; }
+        .box-common:hover .tip-content:before {
+          left: 48px; } }
+
+@inlcude respondTo(smartphone400) {
+  .box-common:hover .tip-content {
+    display: block; }
+    .box-common:hover .tip-content .likes {
+      left: 0.750em; }
+      .box-common:hover .tip-content .likes + .likes {
+        left: 1.750em; }
+    .box-common:hover .tip-content:before {
+      left: 65px !important; } }
     @media (min-width: 767px) and (max-width: 1024px) {
       .box-common:hover .tip-content {
         display: block;
@@ -254,13 +284,21 @@ body {
         .box-common:hover .tip-content .divider {
           border: 1px solid #ffffff;
           height: 3.875em; }
+        .box-common:hover .tip-content .likes {
+          left: 2.188em; }
+          .box-common:hover .tip-content .likes + .likes {
+            left: 6.250em; }
+        .box-common:hover .tip-content .results span {
+          margin-left: 1.250em; }
+          .box-common:hover .tip-content .results span + span {
+            margin-left: 2.188em; }
         .box-common:hover .tip-content:before {
           border-right-color: transparent;
           border-left-color: transparent;
           border-bottom-color: transparent;
           border-top-color: #9d9d9d;
           top: 62px;
-          left: 65px; } }
+          left: 88px; } }
     @media (min-width: 1174px) {
       .box-common:hover .tip-content {
         display: block;

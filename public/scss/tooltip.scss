@@ -12,6 +12,12 @@
     @include respondTo(smartphone) {
       display: none;
     }
+    @include respondTo(smartphone300) {
+      display: none;
+    }
+    @include respondTo(smartphone400) {
+      display: none;
+    }
     @include respondTo(tablet) {
       display: none;
     }
@@ -62,14 +68,13 @@
       background: $color-grey-light;
       .divider {
         border: 1px solid $color-white;
-        height: 3.875em;
-        ; // 62px
+        height: 3.875em; // 62px
       }
 
       .likes {
         font-size: $font-min-small;
         +.likes {
-          left: 3.438em;
+          left: 24%;
         }
       }
 
@@ -77,7 +82,7 @@
         span {
           margin-left: $font-min-small;
           +span {
-            margin-left: $font-min-small;
+            margin-left: 1.125em;
           }
         }
       }
@@ -88,7 +93,42 @@
         border-bottom-color: transparent;
         border-top-color: $color-grey-strong;
         top: 62px;
-        left: 56px;
+        left: 40%;
+      }
+    }
+
+    @include respondTo(smartphone300) {
+      display: block;
+      .likes {
+        left: 0.750em;
+        +.likes {
+          left: 1.750em;
+        }
+      }
+      .results {
+        span {
+          font-size: 0.875em;
+          margin-left: 0.500em;
+          +span {
+            margin-left: 0.250em;
+          }
+        }
+      }
+      &:before {
+        left: 48px;
+      }
+    }
+
+    @inlcude respondTo(smartphone400) {
+      display: block;
+      .likes {
+        left: 0.750em;
+        +.likes {
+          left: 1.750em;
+        }
+      }
+      &:before {
+        left: 65px !important;
       }
     }
 
@@ -102,7 +142,24 @@
       background: $color-grey-light;
       .divider {
         border: 1px solid $color-white;
-        height: 3.875em;; // 25px
+        height: 3.875em;
+        ; // 25px
+      }
+
+      .likes {
+        left: 2.188em;
+        +.likes {
+          left: 6.250em;
+        }
+      }
+
+      .results {
+        span {
+          margin-left: 1.250em;
+          +span {
+            margin-left: 2.188em;
+          }
+        }
       }
 
       &:before {
@@ -111,7 +168,7 @@
         border-bottom-color: transparent;
         border-top-color: $color-grey-strong;
         top: 62px;
-        left: 65px;
+        left: 88px;
       }
     }
     @include respondTo(desktop) {

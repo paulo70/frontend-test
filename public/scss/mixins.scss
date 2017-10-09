@@ -1,4 +1,6 @@
 $smartphone: 480px;
+$smartphone300: 320px;
+$smartphone400: 480px;
 $tabletPortrait: 767px;
 $tabletLandscape: 1024px;
 $desktop: 1174px;
@@ -7,6 +9,12 @@ $largeScreen: 1400px;
 @mixin respondTo($media) {
   @if $media == smartphone {
     @media (max-width: $smartphone) { @content; }
+  }
+  @else if $media == smartphone300 {
+    @media (max-width: $smartphone300) { @content; }
+  }
+  @else if $media == smartphone400 {
+    @media (min-width: $smartphone400) { @content; }
   }
   @else if $media == tablet {
     @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
