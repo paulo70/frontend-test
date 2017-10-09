@@ -3,7 +3,6 @@ const babelify = require('babelify');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const jshint = require('gulp-jshint');
-const clean = require('gulp-clean');
 const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
@@ -12,11 +11,6 @@ const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const runSequence = require('run-sequence');
 const entryPoint = 'javascripts/main.js';
-
-gulp.task('clean', () => {
-  return gulp.src('./dist')
-    .pipe(clean());
-});
 
 gulp.task('transpiler', () => {
   return browserify(entryPoint, { debug: true })
